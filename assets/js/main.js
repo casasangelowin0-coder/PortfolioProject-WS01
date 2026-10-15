@@ -9,6 +9,7 @@ import { initProjects } from './projects.js';
 import { initContactForm } from './contact.js';
 import { initMotion } from './motion.js';
 import { initHeroNameSwipe } from './hero-swipe.js';
+import { initWorldTime } from './world-time.js';
 
 // Global error handler
 window.addEventListener('error', (event) => {
@@ -34,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Hero animation
     initHeroNameSwipe();
+    initWorldTime();
 
     // Motion (last, observes other modules' content)
     initMotion();
