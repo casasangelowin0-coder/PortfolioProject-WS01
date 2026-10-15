@@ -1,6 +1,6 @@
 # Angelo Win Casas — IT Student Portfolio
 
-Google-inspired portfolio website built with vanilla HTML, CSS, and JavaScript. Features Material Design 3 components, dark/light theme, project filtering, and smooth animations.
+Portfolio website built with vanilla HTML, CSS, and JavaScript. Features Material Design 3 components, dark/light theme, project filtering, and smooth animations.
 
 ## About
 
