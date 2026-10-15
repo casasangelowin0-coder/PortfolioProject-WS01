@@ -1,49 +1,31 @@
-name: Deploy to GitHub Pages
+import { defineConfig } from 'vite';
 
-on:
-  push:
-    branches: [main]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: false
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build
-        run: npm run build
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+export default defineConfig({
+  root: '.',
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    minify: 'esbuild',
+    rollupOptions: {
+      output: {
+        entryFileNames: 'assets/js/[name]-[hash].js',
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        assetFileNames: (assetInfo) => {
+          const info = assetInfo.name.split('.');
+          const ext = info[info.length - 1];
+          if (/\.(css)$/.test(assetInfo.name)) {
+            return 'assets/css/[name]-[hash].css';
+          }
+          if (/\.(png|jpe?g|gif|svg|webp|woff2?)$/.test(assetInfo.name)) {
+            return 'assets/images/[name]-[hash].[ext]';
+          }
+          return 'assets/[name]-[hash].[ext]';
+        }
+      }
+    }
+  },
+  server: {
+    port: 3000,
+    open: true
+  }
+});
