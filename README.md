@@ -9,7 +9,7 @@
 **School:** [School Name]
 **Semester:** [e.g. 1st Semester, A.Y. 2025–2026]
 
-🔗 **Live Site:** https://casasangelowin0-coder.github.io/PorfolioProject-WS01/
+🔗 **Live Site:** https://casasangelowin0-coder.github.io/PortfolioProject-WS01/
 💻 **Repository:** https://github.com/casasangelowin0-coder/PorfolioProject-WS01
 
 ---
