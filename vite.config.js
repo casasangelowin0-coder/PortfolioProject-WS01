@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   root: '.',
+  base: '/PorfolioProject-WS01/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
