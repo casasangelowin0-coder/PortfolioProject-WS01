@@ -1,203 +1,117 @@
-# Angelo Win Casas — IT Student Portfolio
+# PorfolioProject-WS01 — Personal Portfolio Website
 
-Portfolio website built with vanilla HTML, CSS, and JavaScript. Features Material Design 3 components, dark/light theme, project filtering, and smooth animations.
+> **Course Project** for the subject **WS01** — submitted in partial fulfillment of the course requirements.
 
-## About
+**Student:** Angelo Win Casas
+**Subject:** WS01
+**Section:** [Your Section — e.g. BSIT 2-1]
+**Professor:** [Professor Name]
+**School:** [School Name]
+**Semester:** [e.g. 1st Semester, A.Y. 2025–2026]
 
-This is the personal portfolio of **Angelo Win Casas**, a 2nd-year IT student passionate about Operating Systems, systems programming, and low-level development. The portfolio showcases academic journey, systems programming projects, and technical interests.
+🔗 **Live Site:** https://casasangelowin0-coder.github.io/PorfolioProject-WS01/
+💻 **Repository:** https://github.com/casasangelowin0-coder/PorfolioProject-WS01
 
-## Features
+---
 
-- **Material Design 3** component system (buttons, cards, chips, text fields, nav, modal, toast)
-- **Dark/Light theme** with persistence and system preference detection
-- **Responsive design** (mobile-first, breakpoints at 600/905/1240/1440px)
-- **Project showcase** with category filtering and detail modals (systems programming focus)
-- **Contact form** with validation (Formspree integration)
-- **Smooth animations** with `prefers-reduced-motion` support
-- **Accessibility** (WCAG 2.1 AA, semantic HTML, focus management, ARIA)
-- **Performance optimized** (<150KB gzipped, 90+ Lighthouse)
-- **Zero dependencies** (vanilla JS, no frameworks)
-- **Hero name pop animation** with waving emoji
+## 1. Project Description
 
-## Quick Start
+This repository contains my personal portfolio website, developed as my project for **WS01**. The site introduces who I am as a 2nd-year IT student, my interest in Operating Systems and systems programming, my academic journey, selected projects, and a working contact form.
 
-```bash
-# Install dependencies
-npm install
+The project demonstrates fundamental web development competencies required in WS01: semantic HTML5 structure, responsive CSS layout, vanilla JavaScript interactivity, form handling, accessibility, and deployment to GitHub Pages using GitHub Actions.
 
-# Development server (with hot reload)
-npm run dev
+## 2. Objectives
 
-# Production build
-npm run build
+- Build a responsive, multi-section portfolio using HTML, CSS, and JavaScript.
+- Apply layout techniques (Flexbox, CSS Grid) and a consistent design system.
+- Implement interactive features: dark/light theme, project filtering, detail modals, scroll animations, live world clock, and validated contact form.
+- Practice version control with Git/GitHub and automated deployment with GitHub Actions.
+- Follow accessibility (WCAG 2.1 AA) and performance best practices.
 
-# Preview production build
-npm run preview
+## 3. Features
+
+- **Hero section** — animated name pop-in, waving emoji, and a **live world-time timer card** (Manila main clock with per-digit rolling animation + LA / New York / London / Paris times).
+- **About section** — student bio and skill cards (Systems Programming, Backend & APIs, Learning & Tools).
+- **Projects section** — systems-programming projects loaded from `projects.json`, with category filters and detail modals.
+- **Journey section** — academic timeline (2nd year, 1st year, self-taught, SHS STEM).
+- **Contact section** — validated form powered by Formspree, plus direct email link.
+- **Theme toggle** — dark/light mode with `localStorage` persistence and OS preference detection.
+- **Responsive + accessible** — mobile-first layout, semantic landmarks, skip link, focus states, `prefers-reduced-motion` support.
+
+## 4. Technologies Used
+
+- HTML5, CSS3 (custom properties, Flexbox, Grid, keyframe animations)
+- Vanilla JavaScript (ES modules, `Intl.DateTimeFormat`, Web Animations API, `IntersectionObserver`)
+- Formspree (contact form backend)
+- GitHub Actions + GitHub Pages (CI/CD and free static hosting)
+- Optional local tooling: Node.js + Vite (dev server only — production deploy is static, no build step)
+
+## 5. Project Structure
+
 ```
-
-## Project Structure
-
-```
-portfolio/
-├── index.html              # Main HTML entry point
-├── projects.json           # Project data (systems programming projects)
-├── package.json            # Build scripts
-├── vite.config.js          # Vite configuration
-├── .github/workflows/      # GitHub Actions deployment
+PorfolioProject-WS01/
+├── index.html                  # Main page (hero, about, projects, journey, contact, footer)
+├── projects.json               # Project data rendered by assets/js/projects.js
 ├── assets/
 │   ├── css/
-│   │   ├── tokens.css      # Design tokens (colors, spacing, typography)
-│   │   ├── layout.css      # Grid, container, section spacing
-│   │   ├── components.css  # Material Design components
-│   │   ├── motion.css      # Animations & transitions
-│   │   └── main.css        # Imports + page-specific styles
+│   │   ├── tokens.css          # Design tokens (colors, spacing, typography)
+│   │   ├── layout.css          # Grid, container, responsive utilities
+│   │   ├── components.css      # Buttons, cards, chips, fields, nav, modal, toast
+│   │   ├── motion.css          # Animations and transitions
+│   │   └── main.css            # Page styles + hero timer card styles
 │   ├── js/
-│   │   ├── theme.js        # Theme management
-│   │   ├── navigation.js   # Navbar, mobile drawer, scroll
-│   │   ├── projects.js     # Project rendering, filtering, modal
-│   │   ├── contact.js      # Form validation, submission
-│   │   ├── motion.js       # Scroll reveal animations
-│   │   ├── hero-swipe.js   # Hero name pop animation
-│   │   └── main.js         # Bootstrap entry point
-│   ├── fonts/              # Self-hosted WOFF2 fonts (placeholders)
-│   └── images/             # SVG placeholders + project thumbnails
-└── dist/                   # Production build output (gitignored)
+│   │   ├── main.js             # Bootstrap entry point
+│   │   ├── theme.js            # Dark/light theme
+│   │   ├── navigation.js       # Navbar, drawer, smooth scroll, back-to-top
+│   │   ├── projects.js         # Project grid, filters, modal
+│   │   ├── contact.js          # Validation + Formspree submit + toasts
+│   │   ├── motion.js           # Scroll-reveal animations
+│   │   ├── hero-swipe.js       # Hero name pop animation
+│   │   └── world-time.js       # Live clock + rolling digit animation
+│   ├── fonts/                  # Optional self-hosted WOFF2 (system fallback included)
+│   └── images/                 # Favicon, og-image, SVG placeholders, project thumbs
+└── .github/workflows/
+    └── deploy.yml              # Static deploy to GitHub Pages (no build)
 ```
 
-## Customization
+## 6. How to Run Locally
 
-### 1. Personal Information
+No build is required. Pick either option:
 
-Edit `index.html`:
-- Name, title, bio in hero section
-- About section content (your OS journey)
-- Journey timeline entries (academic + self-taught)
-- Contact form endpoint (Formspree)
-- Social links in footer (GitHub, LinkedIn, email)
+**Option A — just open it:**
+1. Download or clone this repository.
+2. Open `index.html` in any modern browser.
 
-### 2. Projects
+**Option B — Live Server (recommended, for `fetch('projects.json')` to work):**
+1. Open the folder in VS Code.
+2. Install the **Live Server** extension.
+3. Right-click `index.html` → **Open with Live Server** (http://127.0.0.1:5500).
 
-Edit `projects.json` with your systems programming projects:
-```json
-{
-  "id": "mini-shell",
-  "title": "Mini Shell (C)",
-  "description": "A minimal Unix shell with job control and piping",
-  "longDescription": "Built a fully functional shell in C...",
-  "tags": ["C", "Linux", "POSIX", "Process Management"],
-  "category": "backend",
-  "thumbnail": "assets/images/projects/mini-shell-thumb.svg",
-  "images": ["mini-shell-1.svg", "mini-shell-2.svg"],
-  "links": {
-    "github": "https://github.com/yourusername/mini-shell",
-    "live": null,
-    "caseStudy": null
-  },
-  "featured": true
-}
+**Option C — Vite dev server (optional):**
+```bash
+npm install
+npm run dev   # http://localhost:3000
 ```
 
-Categories: `backend`, `frontend`, `fullstack` (filter chips in UI)
+## 7. Deployment
 
-Add thumbnails to `assets/images/projects/` (recommended: 400×250px, SVG or WebP).
+Hosting is **free via GitHub Pages**:
 
-### 3. Colors & Theme
+1. Push to the `main` branch.
+2. The workflow in `.github/workflows/deploy.yml` uploads the repository as a static Pages artifact (no `npm build`).
+3. In repo **Settings → Pages**, set **Source** to **GitHub Actions**.
+4. The site goes live at `https://casasangelowin0-coder.github.io/PorfolioProject-WS01/` after the Actions run turns green.
 
-Edit `assets/css/tokens.css`:
-- Change `--seed` color to generate new palette (default: Google Blue `#1a73e8`)
-- Override individual color tokens
-- Modify spacing, typography, border radius scales
+## 8. Contact
 
-### 4. Fonts
+- **Email:** casasangelowin2@gmail.com
+- **Facebook:** https://www.facebook.com/Win.AWC?mibextid=rS40aB7S9Ucbxw6v
+- **GitHub:** https://github.com/casasangelowin0-coder
 
-Replace placeholder files in `assets/fonts/`:
-- `inter-var.woff2` (variable font, 100-900)
-- `inter-italic-var.woff2`
-- `robotoflex-var.woff2`
+Feel free to reach out about OS internals, systems programming, or internship opportunities.
 
-Download from:
-- [Inter](https://github.com/rsms/inter/releases) → `InterVariable.woff2`
-- [Roboto Flex](https://github.com/googlefonts/robotoflex/releases) → `RobotoFlex-VariableFont.woff2`
+## 9. Acknowledgments
 
-CSS has `local()` fallbacks so system fonts work without custom fonts.
-
-### 5. Contact Form
-
-1. Create free Formspree account at formspree.io
-2. Create new form and get endpoint
-3. Replace `FORMSPREE_ENDPOINT` in `assets/js/contact.js`
-
-### 6. Social Links
-
-Update footer in `index.html`:
-- GitHub: `https://github.com/yourusername`
-- LinkedIn: `https://linkedin.com/in/yourprofile`
-- Email: `mailto:your.email@domain.com`
-
-## Deployment
-
-### GitHub Pages (Automatic)
-
-1. Push to `main` branch
-2. GitHub Actions builds and deploys to `gh-pages` branch
-3. Enable GitHub Pages in repository settings (source: `gh-pages` branch)
-4. Site available at `https://username.github.io/repository-name/`
-
-### Custom Domain
-
-1. Add `CNAME` file to `dist/` after build with your domain
-2. Configure DNS (CNAME to `username.github.io` or A records to GitHub Pages IPs)
-3. Enable "Enforce HTTPS" in GitHub Pages settings
-
-### Other Platforms
-
-The `dist/` folder contains static files deployable anywhere:
-- Netlify, Vercel, Cloudflare Pages
-- AWS S3 + CloudFront
-- Any static hosting
-
-## Performance
-
-- **Total size**: ~120KB gzipped (HTML + CSS + JS)
-- **Images**: Optimized SVG/WebP, lazy-loaded
-- **Fonts**: Self-hosted variable fonts (WOFF2) with system fallbacks
-- **CSS**: Minified, critical path optimized
-- **JS**: Minified, code-split by module
-- **Caching**: Long-term cache headers via Vite hashing
-
-## Browser Support
-
-- Chrome 90+
-- Firefox 88+
-- Safari 15+
-- Edge 90+
-
-## Accessibility
-
-- Semantic HTML5 landmarks
-- ARIA labels and roles
-- Focus visible states
-- Color contrast 4.5:1 (AA)
-- Keyboard navigation
-- Screen reader support
-- Reduced motion respect
-- Skip links
-
-## Scripts
-
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start dev server on localhost:3000 |
-| `npm run build` | Production build to `dist/` |
-| `npm run preview` | Preview production build locally |
-
-## License
-
-MIT License — feel free to use for your own portfolio.
-
-## Credits
-
-- Material Design 3 specifications
-- Inter font by Rasmus Andersson
-- Roboto Flex font by Google Fonts
-- Icons adapted from Material Symbols
+- Course instructor and classmates in WS01 for guidance and feedback.
+- Material Design 3 specification for the design language.
+- Inter and Roboto Flex typefaces; icons adapted from Material Symbols.
