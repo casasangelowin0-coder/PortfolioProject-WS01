@@ -1,0 +1,188 @@
+/* ========================================
+   MOTION & ANIMATIONS
+   ======================================== */
+
+/* ---- Keyframes ---- */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(24px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ---- Animation Classes ---- */
+.animate-fade-in { animation: fade-in var(--duration-medium) var(--easing-standard) forwards; }
+.animate-slide-up { animation: slide-up var(--duration-medium) var(--easing-decelerate) forwards; }
+.animate-slide-down { animation: slide-down var(--duration-medium) var(--easing-decelerate) forwards; }
+.animate-slide-in-right { animation: slide-in-right var(--duration-medium) var(--easing-decelerate) forwards; }
+.animate-scale-in { animation: scale-in var(--duration-medium) var(--easing-decelerate) forwards; }
+
+/* ---- Stagger Delays ---- */
+.delay-1 { animation-delay: 50ms; }
+.delay-2 { animation-delay: 100ms; }
+.delay-3 { animation-delay: 150ms; }
+.delay-4 { animation-delay: 200ms; }
+.delay-5 { animation-delay: 250ms; }
+.delay-6 { animation-delay: 300ms; }
+
+/* ---- Reveal on Scroll (IntersectionObserver) ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--duration-medium) var(--easing-decelerate),
+              transform var(--duration-medium) var(--easing-decelerate);
+}
+
+.reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal--slide-right {
+  transform: translateX(-24px);
+}
+
+.reveal--slide-right.reveal--visible {
+  transform: translateX(0);
+}
+
+.reveal--scale {
+  transform: scale(0.95);
+}
+
+.reveal--scale.reveal--visible {
+  transform: scale(1);
+}
+
+/* ---- Reduced Motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ---- Theme Transition ---- */
+*,
+*::before,
+*::after {
+  transition: background-color var(--duration-medium) var(--easing-standard),
+              border-color var(--duration-medium) var(--easing-standard),
+              color var(--duration-medium) var(--easing-standard),
+              box-shadow var(--duration-medium) var(--easing-standard);
+}
+
+/* ---- Hero Entrance ---- */
+.hero__content > * {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: slide-up var(--duration-long) var(--easing-decelerate) forwards;
+}
+
+.hero__content > *:nth-child(1) { animation-delay: 100ms; }
+.hero__content > *:nth-child(2) { animation-delay: 200ms; }
+.hero__content > *:nth-child(3) { animation-delay: 300ms; }
+.hero__content > *:nth-child(4) { animation-delay: 400ms; }
+.hero__content > *:nth-child(5) { animation-delay: 500ms; }
+
+/* ---- Project Card Hover ---- */
+.card--elevated {
+  will-change: transform, box-shadow;
+}
+
+/* ---- Chip Filter Animation ---- */
+.chip--filter {
+  will-change: background-color, color, border-color;
+}
+
+/* ---- Button Ripple (CSS-only approximation) ---- */
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  background: currentColor;
+  transform: scale(0);
+  pointer-events: none;
+}
+
+.btn:active::after {
+  animation: ripple var(--duration-medium) var(--easing-decelerate);
+}
+
+@keyframes ripple {
+  to {
+    opacity: 0.15;
+    transform: scale(2.5);
+  }
+}
+
+/* ---- Focus Ring Animation ---- */
+:focus-visible {
+  animation: focus-ring var(--duration-short) var(--easing-standard);
+}
+
+@keyframes focus-ring {
+  0% { box-shadow: 0 0 0 0 var(--color-primary); }
+  100% { box-shadow: 0 0 0 4px transparent; }
+}
+
+/* ---- Loading Skeleton ---- */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-surface-container) 25%,
+    var(--color-surface-container-high) 50%,
+    var(--color-surface-container) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-sm);
+}
+
+.skeleton--circle { border-radius: 50%; }
+.skeleton--rounded { border-radius: var(--radius-md); }

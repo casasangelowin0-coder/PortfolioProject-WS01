@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" fill="none">
+  <rect width="400" height="250" fill="#ffd9e3"/>
+  <rect x="20" y="20" width="140" height="16" rx="4" fill="#7c5260" opacity="0.3"/>
+  <rect x="20" y="50" width="60" height="120" rx="4" fill="#7c5260" opacity="0.2"/>
+  <rect x="100" y="50" width="60" height="120" rx="4" fill="#7c5260" opacity="0.15"/>
+  <rect x="180" y="50" width="60" height="120" rx="4" fill="#7c5260" opacity="0.2"/>
+  <rect x="260" y="50" width="60" height="120" rx="4" fill="#7c5260" opacity="0.15"/>
+  <rect x="340" y="50" width="40" height="120" rx="4" fill="#7c5260" opacity="0.2"/>
+  <circle cx="360" cy="50" r="8" fill="#7c5260" opacity="0.4"/>
+  <text x="200" y="220" text-anchor="middle" font-family="system-ui" font-size="12" fill="#79747e">API Gateway Thumbnail</text>
+</svg>

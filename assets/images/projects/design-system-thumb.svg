@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" fill="none">
+  <rect width="400" height="250" fill="#e0e2eb"/>
+  <rect x="20" y="20" width="100" height="16" rx="4" fill="#5c6370" opacity="0.3"/>
+  <rect x="20" y="50" width="360" height="8" rx="4" fill="#5c6370" opacity="0.2"/>
+  <rect x="20" y="70" width="320" height="8" rx="4" fill="#5c6370" opacity="0.2"/>
+  <rect x="20" y="110" width="120" height="80" rx="8" fill="#5c6370" opacity="0.15"/>
+  <rect x="160" y="110" width="120" height="80" rx="8" fill="#5c6370" opacity="0.15"/>
+  <rect x="300" y="110" width="80" height="80" rx="8" fill="#5c6370" opacity="0.15"/>
+  <circle cx="360" cy="50" r="8" fill="#5c6370" opacity="0.4"/>
+  <text x="200" y="220" text-anchor="middle" font-family="system-ui" font-size="12" fill="#79747e">Design System Thumbnail</text>
+</svg>
