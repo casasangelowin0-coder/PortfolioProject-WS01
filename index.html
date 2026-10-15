@@ -89,16 +89,28 @@
               <a href="#contact" class="btn btn--outlined btn--lg">Get In Touch</a>
             </div>
           </div>
-          <div class="hero__visual" aria-hidden="true">
-            <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="50" y="50" width="300" height="200" rx="16" stroke="currentColor" stroke-width="2"/>
-              <rect x="70" y="70" width="120" height="16" rx="4" fill="currentColor" opacity="0.3"/>
-              <rect x="70" y="100" width="260" height="8" rx="4" fill="currentColor" opacity="0.2"/>
-              <rect x="70" y="120" width="200" height="8" rx="4" fill="currentColor" opacity="0.2"/>
-              <rect x="70" y="140" width="180" height="8" rx="4" fill="currentColor" opacity="0.2"/>
-              <circle cx="320" cy="80" r="8" fill="currentColor" opacity="0.4"/>
-              <rect x="70" y="180" width="80" height="32" rx="8" fill="currentColor" opacity="0.3"/>
-            </svg>
+          <div class="hero__visual world-timer" role="img" aria-label="Live world clock showing Manila time">
+            <div class="world-timer__panel">
+              <div class="world-timer__top">
+                <span class="world-timer__brand">◣ WORLD TIME</span>
+                <span class="world-timer__dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+              </div>
+              <div class="world-timer__labels" aria-hidden="true"><span>hours</span><span>minutes</span><span>seconds</span></div>
+              <div class="world-timer__clock" aria-hidden="true">
+                <span class="wt-drum"><span class="wt-drum-inner wt-digit" id="wt-h1">0</span></span><span class="wt-drum"><span class="wt-drum-inner wt-digit" id="wt-h2">0</span></span><span class="world-timer__colon">:</span><span class="wt-drum"><span class="wt-drum-inner wt-digit" id="wt-m1">0</span></span><span class="wt-drum"><span class="wt-drum-inner wt-digit" id="wt-m2">0</span></span><span class="world-timer__colon">:</span><span class="wt-drum"><span class="wt-drum-inner wt-digit" id="wt-s1">0</span></span><span class="wt-drum"><span class="wt-drum-inner wt-digit" id="wt-s2">0</span></span>
+              </div>
+              <div class="world-timer__cities">
+                <div><span>Manila</span><strong class="wt-city-drum"><span id="wt-manila">00:00</span></strong></div>
+                <div><span>LA</span><strong class="wt-city-drum"><span id="wt-la">00:00</span></strong></div>
+                <div><span>New York</span><strong class="wt-city-drum"><span id="wt-ny">00:00</span></strong></div>
+                <div><span>London</span><strong class="wt-city-drum"><span id="wt-london">00:00</span></strong></div>
+                <div><span>Paris</span><strong class="wt-city-drum"><span id="wt-paris">00:00</span></strong></div>
+              </div>
+              <div class="world-timer__footer">
+                <div class="world-timer__place"><strong>MANILA,</strong><strong>PHILIPPINES</strong></div>
+                <div class="world-timer__date" id="wt-date">Sunday, April 27</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
