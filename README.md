@@ -4,10 +4,9 @@
 
 **Student:** Angelo Win Casas
 **Subject:** WS01
-**Section:** [Your Section — e.g. BSIT 2-1]
-**Professor:** [Professor Name]
-**School:** [School Name]
-**Semester:** [e.g. 1st Semester, A.Y. 2025–2026]
+**Section:** E053
+**Professor:**  Prof. Mark Angelo Sioson
+**School:** ICCT
 
 🔗 **Live Site:** https://casasangelowin0-coder.github.io/PortfolioProject-WS01/
 💻 **Repository:** https://github.com/casasangelowin0-coder/PorfolioProject-WS01
