@@ -31,7 +31,6 @@
       <nav class="navbar__menu" aria-label="Main navigation">
         <ul class="navbar__menu" role="menubar">
           <li role="none"><a href="#about" class="navbar__link" role="menuitem">About</a></li>
-          <li role="none"><a href="#projects" class="navbar__link" role="menuitem">Projects</a></li>
           <li role="none"><a href="#experience" class="navbar__link" role="menuitem">Experience</a></li>
           <li role="none"><a href="#contact" class="navbar__link" role="menuitem">Contact</a></li>
         </ul>
@@ -64,7 +63,6 @@
   <aside class="drawer" id="mobile-drawer" role="navigation" aria-label="Mobile menu">
     <ul class="drawer__menu">
       <li><button class="drawer__item" data-target="about">About</button></li>
-      <li><button class="drawer__item" data-target="projects">Projects</button></li>
       <li><button class="drawer__item" data-target="experience">Experience</button></li>
       <li><button class="drawer__item" data-target="contact">Contact</button></li>
     </ul>
@@ -77,34 +75,32 @@
       <div class="container">
         <div class="hero__inner">
           <div class="hero__content">
-            <span class="hero__badge">IT Student · Systems Enthusiast</span>
-            <h1 id="hero-title" class="hero__title">
-              <span class="hero__name-static">Hello there, I'm </span>
-              <span class="hero__wave-emoji" aria-hidden="true">👋</span>
-              <span class="hero__name-swipe" aria-live="polite"></span>
-            </h1>
+            <div class="hero__intro">
+              <img class="hero__avatar" src="assets/images/profile.jpg" alt="Portrait of Angelo Win Casas" width="384" height="384">
+              <div class="hero__heading">
+                <span class="hero__badge">IT Student · Systems Enthusiast</span>
+                <h1 id="hero-title" class="hero__title">
+                  <span class="hero__name-static">Hello there, I'm </span>
+                  <span class="hero__wave-emoji" aria-hidden="true">👋</span>
+                  <span class="hero__name-swipe" aria-live="polite"></span>
+                </h1>
+              </div>
+            </div>
             <p class="hero__subtitle">2nd-year IT student obsessed with Operating Systems, kernels, and low-level programming. Building projects that bridge systems programming and modern development. Thanks for visiting!</p>
             <div class="hero__actions">
-              <a href="#projects" class="btn btn--filled btn--lg">View Projects</a>
+              <a href="#about" class="btn btn--filled btn--lg">About Me</a>
               <a href="#contact" class="btn btn--outlined btn--lg">Get In Touch</a>
             </div>
           </div>
-          <div class="hero__visual world-timer" role="img" aria-label="Live world clock showing Manila time">
+          <div class="hero__visual world-timer" role="img" aria-label="Live Philippines time clock">
             <div class="world-timer__panel">
               <div class="world-timer__top">
-                <span class="world-timer__brand">◣ WORLD TIME</span>
+                <span class="world-timer__brand">◣ PHILIPPINES TIME</span>
                 <span class="world-timer__dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
               </div>
               <div class="world-timer__labels" aria-hidden="true"><span>hours</span><span>minutes</span><span>seconds</span></div>
               <div class="world-timer__clock" aria-hidden="true">
                 <span class="wt-drum"><span class="wt-drum-inner wt-digit" id="wt-h1">0</span></span><span class="wt-drum"><span class="wt-drum-inner wt-digit" id="wt-h2">0</span></span><span class="world-timer__colon">:</span><span class="wt-drum"><span class="wt-drum-inner wt-digit" id="wt-m1">0</span></span><span class="wt-drum"><span class="wt-drum-inner wt-digit" id="wt-m2">0</span></span><span class="world-timer__colon">:</span><span class="wt-drum"><span class="wt-drum-inner wt-digit" id="wt-s1">0</span></span><span class="wt-drum"><span class="wt-drum-inner wt-digit" id="wt-s2">0</span></span>
-              </div>
-              <div class="world-timer__cities">
-                <div><span>Manila</span><strong class="wt-city-drum"><span id="wt-manila">00:00</span></strong></div>
-                <div><span>LA</span><strong class="wt-city-drum"><span id="wt-la">00:00</span></strong></div>
-                <div><span>New York</span><strong class="wt-city-drum"><span id="wt-ny">00:00</span></strong></div>
-                <div><span>London</span><strong class="wt-city-drum"><span id="wt-london">00:00</span></strong></div>
-                <div><span>Paris</span><strong class="wt-city-drum"><span id="wt-paris">00:00</span></strong></div>
               </div>
               <div class="world-timer__footer">
                 <div class="world-timer__place"><strong>MANILA,</strong><strong>PHILIPPINES</strong></div>
@@ -155,27 +151,7 @@
         </div>
 
         <div class="about__actions flex justify-center gap-4 mt-10 reveal">
-          <a href="assets/images/resume.pdf" class="btn btn--outlined btn--lg" download>Download Resume</a>
-          <a href="https://github.com" class="btn btn--text btn--lg" target="_blank" rel="noopener">GitHub Profile</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section projects" aria-labelledby="projects-title">
-      <div class="container">
-        <header class="projects__header reveal">
-          <h2 id="projects-title" class="projects__title">Featured Projects</h2>
-          <div class="projects__filters" role="group" aria-label="Filter projects by category">
-            <button class="chip chip--filter" role="tab" aria-selected="true" data-filter="all">All</button>
-            <button class="chip chip--filter" role="tab" aria-selected="false" data-filter="fullstack">Full Stack</button>
-            <button class="chip chip--filter" role="tab" aria-selected="false" data-filter="frontend">Frontend</button>
-            <button class="chip chip--filter" role="tab" aria-selected="false" data-filter="backend">Backend</button>
-          </div>
-        </header>
-
-        <div class="projects__grid" id="projects-grid" role="list">
-          <!-- Projects rendered by JS -->
+          <a href="https://github.com/casasangelowin0-coder" class="btn btn--text btn--lg" target="_blank" rel="noopener">GitHub Profile</a>
         </div>
       </div>
     </section>
@@ -188,7 +164,6 @@
         <div class="timeline">
           <article class="timeline__item reveal">
             <div class="timeline__marker" aria-hidden="true"></div>
-            <time class="timeline__date" datetime="2024-08">Aug 2024 — Present</time>
             <h3 class="timeline__role">2nd Year IT Student</h3>
             <p class="timeline__company">College / University</p>
             <p class="timeline__desc">Focused on Operating Systems, Computer Architecture, and Data Structures. Currently building a mini shell in C, exploring Linux kernel modules, and learning x86 assembly. Active in the campus tech community.</p>
@@ -196,26 +171,16 @@
 
           <article class="timeline__item reveal">
             <div class="timeline__marker" aria-hidden="true"></div>
-            <time class="timeline__date" datetime="2023-08">Aug 2023 — May 2024</time>
-            <h3 class="timeline__role">1st Year IT Student</h3>
+            <h3 class="timeline__role">1st Year BSIT Student</h3>
             <p class="timeline__company">College / University</p>
-            <p class="timeline__desc">Completed foundational courses: Programming Fundamentals (C/Python), Discrete Mathematics, Computer Organization, and Web Technologies. Built first CLI tools and a simple HTTP server from scratch.</p>
+            <p class="timeline__desc">Started my first year in college by shifting courses and choosing BSIT as my new program, driven by my interest in IoT and emerging technologies.</p>
           </article>
 
           <article class="timeline__item reveal">
             <div class="timeline__marker" aria-hidden="true"></div>
-            <time class="timeline__date" datetime="2022-06">Jun 2022 — Jul 2023</time>
-            <h3 class="timeline__role">Self-Taught Programming</h3>
-            <p class="timeline__company">Independent Learning</p>
-            <p class="timeline__desc">Started with Python, then moved to C to understand memory management. Completed CS50, built small projects: file organizer, process monitor, and a basic text editor. Discovered passion for systems programming.</p>
-          </article>
-
-          <article class="timeline__item reveal">
-            <div class="timeline__marker" aria-hidden="true"></div>
-            <time class="timeline__date" datetime="2022-03">Senior High School</time>
-            <h3 class="timeline__role">STEM Strand Graduate</h3>
-            <p class="timeline__company">High School</p>
-            <p class="timeline__desc">Specialized in Science, Technology, Engineering, and Mathematics. Participated in robotics competition and coding workshops. First exposure to logic gates and microcontrollers.</p>
+            <h3 class="timeline__role">Industrial Arts (TVL) Graduate</h3>
+            <p class="timeline__company">Concepcion Integrated School — Secondary Level, Marikina City</p>
+            <p class="timeline__desc">Graduated from Concepcion Integrated School, Secondary Level, Marikina City. Completed the Industrial Arts strand under the Technical-Vocational-Livelihood (TVL) track, specializing in Electronics Products Assembly and Servicing (EPAS).</p>
           </article>
         </div>
       </div>
@@ -232,27 +197,23 @@
         <form class="contact__form reveal" id="contact-form" novalidate>
           <div class="form__row">
             <div class="form__group textfield">
-              <input type="text" id="name" name="name" class="textfield__input" placeholder=" " required autocomplete="name">
+              <input type="text" id="name" name="name" class="textfield__input" placeholder=" " required maxlength="60" autocomplete="name">
               <label for="name" class="textfield__label">Name</label>
-              <span class="textfield__error" id="name-error">Please enter your name</span>
             </div>
             <div class="form__group textfield">
-              <input type="email" id="email" name="email" class="textfield__input" placeholder=" " required autocomplete="email">
+              <input type="email" id="email" name="email" class="textfield__input" placeholder=" " required maxlength="100" autocomplete="email">
               <label for="email" class="textfield__label">Email</label>
-              <span class="textfield__error" id="email-error">Please enter a valid email</span>
             </div>
           </div>
 
           <div class="form__group textfield">
             <input type="text" id="subject" name="subject" class="textfield__input" placeholder=" " required>
             <label for="subject" class="textfield__label">Subject</label>
-            <span class="textfield__error" id="subject-error">Please enter a subject</span>
           </div>
 
           <div class="form__group textfield">
             <textarea id="message" name="message" class="textfield__input" placeholder=" " required rows="5" style="height: 120px; resize: vertical;"></textarea>
             <label for="message" class="textfield__label">Message</label>
-            <span class="textfield__error" id="message-error">Please enter your message</span>
           </div>
 
           <button type="submit" class="btn btn--filled btn--lg form__submit">
@@ -274,14 +235,8 @@
     <div class="footer__inner">
       <p class="footer__copyright">&copy; 2025 Angelo Win Casas. IT Student · Built with vanilla HTML, CSS & JS.</p>
       <div class="footer__social">
-        <a href="https://github.com" class="footer__link" aria-label="GitHub" target="_blank" rel="noopener">
+        <a href="https://github.com/casasangelowin0-coder" class="footer__link" aria-label="GitHub" target="_blank" rel="noopener">
           <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-        </a>
-        <a href="https://linkedin.com" class="footer__link" aria-label="LinkedIn" target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-        <a href="https://twitter.com" class="footer__link" aria-label="Twitter" target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         </a>
         <a href="https://www.facebook.com/Win.AWC?mibextid=rS40aB7S9Ucbxw6v" class="footer__link" aria-label="Facebook" target="_blank" rel="noopener">
           <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -299,28 +254,6 @@
       <path d="M18 15l-6-6-6 6"/>
     </svg>
   </button>
-
-  <!-- Project Detail Modal -->
-  <div class="modal" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
-    <div class="modal__backdrop" tabindex="-1"></div>
-    <div class="modal__container">
-      <header class="modal__header">
-        <h2 id="modal-title" class="modal__title"></h2>
-        <button class="modal__close" id="modal-close" aria-label="Close project details" type="button">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <line x1="18" y1="6" x2="6" y2="18"/>
-            <line x1="6" y1="6" x2="18" y2="18"/>
-          </svg>
-        </button>
-      </header>
-      <div class="modal__content" id="modal-content">
-        <!-- Filled by JS -->
-      </div>
-      <footer class="modal__actions">
-        <button class="btn btn--text" id="modal-close-btn" type="button">Close</button>
-      </footer>
-    </div>
-  </div>
 
   <!-- Toast Container -->
   <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
