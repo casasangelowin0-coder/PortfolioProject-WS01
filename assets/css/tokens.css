@@ -160,8 +160,8 @@
 
 /* ---- Typography ---- */
 :root {
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Roboto Flex', var(--font-sans);
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Segoe UI', Roboto, var(--font-sans);
 
   --text-display-large: 57px;
   --text-display-medium: 45px;

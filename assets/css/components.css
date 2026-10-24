@@ -178,52 +178,6 @@
   border-top: 1px solid var(--color-outline-variant);
 }
 
-/* ---- Chip ---- */
-.chip {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-1);
-  height: 32px;
-  padding: 0 var(--space-3);
-  border-radius: var(--radius-full);
-  font-family: var(--font-sans);
-  font-size: var(--text-label-medium);
-  font-weight: var(--weight-medium);
-  line-height: 1;
-  cursor: pointer;
-  user-select: none;
-  transition: all var(--duration-short) var(--easing-standard);
-  border: 1px solid transparent;
-}
-
-.chip--filter {
-  background: var(--color-surface-container-high);
-  color: var(--color-on-surface-variant);
-  border-color: var(--color-outline-variant);
-}
-
-.chip--filter:hover {
-  background: var(--color-surface-container-highest);
-}
-
-.chip--filter[aria-selected="true"] {
-  background: var(--color-primary-container);
-  color: var(--color-on-primary-container);
-  border-color: var(--color-primary);
-}
-
-.chip--filter:focus-visible {
-  outline: var(--focus-ring);
-  outline-offset: var(--focus-ring-offset);
-}
-
-.chip--input {
-  background: var(--color-surface-container);
-  color: var(--color-on-surface);
-}
-
-.chip__icon { width: 16px; height: 16px; }
-
 /* ---- Text Field ---- */
 .textfield {
   position: relative;
@@ -278,19 +232,6 @@
 }
 
 .textfield__input:focus + .textfield__label { color: var(--color-primary); }
-
-.textfield--error .textfield__input { border-color: var(--error); }
-.textfield--error .textfield__input:focus { border-color: var(--error); }
-.textfield--error .textfield__label { color: var(--error); }
-
-.textfield__error {
-  display: none;
-  margin-top: var(--space-1);
-  font-size: var(--text-body-small);
-  color: var(--error);
-}
-
-.textfield--error .textfield__error { display: block; }
 
 /* ---- Nav Bar ---- */
 .navbar {
@@ -459,96 +400,6 @@
   height: auto;
   min-height: 100%;
   margin: 0 var(--space-6);
-}
-
-/* ---- Modal ---- */
-.modal {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-6);
-  z-index: var(--z-modal);
-  opacity: 0;
-  visibility: hidden;
-  transition: all var(--duration-medium) var(--easing-standard);
-}
-
-.modal--open {
-  opacity: 1;
-  visibility: visible;
-}
-
-.modal__backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-  backdrop-filter: blur(4px);
-}
-
-.modal__container {
-  position: relative;
-  width: 100%;
-  max-width: 720px;
-  max-height: 90vh;
-  background: var(--color-surface);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--elevation-3);
-  overflow: hidden;
-  transform: scale(0.9) translateY(20px);
-  transition: transform var(--duration-medium) var(--easing-standard);
-}
-
-.modal--open .modal__container { transform: scale(1) translateY(0); }
-
-.modal__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--space-5) var(--space-6);
-  border-bottom: 1px solid var(--color-outline-variant);
-}
-
-.modal__title {
-  font-family: var(--font-display);
-  font-size: var(--text-headline-small);
-  font-weight: var(--weight-semibold);
-  color: var(--color-on-surface);
-  margin: 0;
-}
-
-.modal__close {
-  width: 40px;
-  height: 40px;
-  border: none;
-  background: transparent;
-  border-radius: var(--radius-full);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-on-surface-variant);
-  transition: all var(--duration-short) var(--easing-standard);
-}
-
-.modal__close:hover { background: var(--color-surface-container-high); color: var(--color-on-surface); }
-.modal__close:focus-visible { outline: var(--focus-ring); outline-offset: -2px; }
-
-.modal__close .icon { width: 24px; height: 24px; }
-
-.modal__content {
-  padding: var(--space-6);
-  overflow-y: auto;
-  max-height: calc(90vh - 120px);
-}
-
-.modal__actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: var(--space-3);
-  padding: var(--space-4) var(--space-6);
-  border-top: 1px solid var(--color-outline-variant);
 }
 
 /* ---- Toast ---- */
