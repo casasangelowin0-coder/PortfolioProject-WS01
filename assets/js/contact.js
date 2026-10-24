@@ -4,11 +4,28 @@
  */
 
 const FORM_SELECTOR = '#contact-form';
-const STATUS_SELECTOR = '#form-status';
 const TOAST_CONTAINER_SELECTOR = '#toast-container';
 
 // Replace with your Formspree endpoint
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xnpjlnoz';
+
+const FIELD_RULES = {
+  name: {
+    label: 'Name',
+    min: 2,
+    max: 60,
+    pattern: /^[\p{L} .'-]+$/u,
+    patternMessage: 'Name may only contain letters, spaces, periods, hyphens, and apostrophes',
+  },
+  email: {
+    label: 'Email',
+    max: 100,
+    pattern: /^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/,
+    patternMessage: 'Please enter a valid email address',
+  },
+  subject: { label: 'Subject' },
+  message: { label: 'Message' },
+};
 
 export function initContactForm() {
   const form = document.querySelector(FORM_SELECTOR);
@@ -16,13 +33,11 @@ export function initContactForm() {
 
   form.addEventListener('submit', handleSubmit);
 
-  // Real-time validation
+  // Enter should not submit the form (textarea still allows new lines)
   form.querySelectorAll('.textfield__input').forEach(input => {
-    input.addEventListener('blur', () => validateField(input));
-    input.addEventListener('input', () => {
-      if (input.classList.contains('textfield__input--invalid')) {
-        validateField(input);
-      }
+    input.addEventListener('keydown', (event) => {
+      if (event.key !== 'Enter' || input.tagName === 'TEXTAREA') return;
+      event.preventDefault();
     });
   });
 }
@@ -32,18 +47,21 @@ async function handleSubmit(event) {
 
   const form = event.target;
   const submitBtn = form.querySelector('[type="submit"]');
-  const statusEl = document.querySelector(STATUS_SELECTOR);
 
   // Validate all fields
-  let isValid = true;
+  let firstInvalid = null;
+  let firstError = '';
   form.querySelectorAll('.textfield__input').forEach(input => {
-    if (!validateField(input)) {
-      isValid = false;
+    const error = validateField(input);
+    if (error && !firstInvalid) {
+      firstInvalid = input;
+      firstError = error;
     }
   });
 
-  if (!isValid) {
-    showToast('Please fix the errors above', 'error');
+  if (firstInvalid) {
+    firstInvalid.focus();
+    showToast(firstError, 'error');
     return;
   }
 
@@ -101,38 +119,33 @@ async function handleSubmit(event) {
 }
 
 function validateField(input) {
-  const fieldGroup = input.closest('.textfield') || input.closest('.form__group');
-  const errorEl = fieldGroup?.querySelector('.textfield__error');
-  let isValid = true;
-  let errorMessage = '';
+  const rules = FIELD_RULES[input.name] || {};
+  const label = rules.label || 'This field';
+  const value = input.value.trim();
 
-  // Required check
-  if (input.required && !input.value.trim()) {
-    isValid = false;
-    errorMessage = 'This field is required';
+  const invalid = (message) => {
+    input.setAttribute('aria-invalid', 'true');
+    return message;
+  };
+
+  if (!value) {
+    return input.required ? invalid(`${label} is required`) : '';
   }
 
-  // Email validation
-  if (input.type === 'email' && input.value.trim()) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(input.value.trim())) {
-      isValid = false;
-      errorMessage = 'Please enter a valid email address';
-    }
+  if (rules.min && value.length < rules.min) {
+    return invalid(`${label} must be at least ${rules.min} characters`);
   }
 
-  // Update UI
-  if (isValid) {
-    input.classList.remove('textfield__input--invalid');
-    fieldGroup?.classList.remove('textfield--error');
-    if (errorEl) errorEl.textContent = '';
-  } else {
-    input.classList.add('textfield__input--invalid');
-    fieldGroup?.classList.add('textfield--error');
-    if (errorEl) errorEl.textContent = errorMessage;
+  if (rules.max && value.length > rules.max) {
+    return invalid(`${label} must be ${rules.max} characters or fewer`);
   }
 
-  return isValid;
+  if (rules.pattern && !rules.pattern.test(value)) {
+    return invalid(rules.patternMessage || `${label} is invalid`);
+  }
+
+  input.setAttribute('aria-invalid', 'false');
+  return '';
 }
 
 function showToast(message, type = 'info') {
