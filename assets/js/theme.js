@@ -47,7 +47,3 @@ function applyTheme(theme) {
   // Dispatch custom event for other modules
   window.dispatchEvent(new CustomEvent('themechange', { detail: { theme } }));
 }
-
-export function getCurrentTheme() {
-  return document.documentElement.getAttribute(THEME_ATTR) || 'light';
-}
