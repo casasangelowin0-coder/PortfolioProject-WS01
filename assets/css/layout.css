@@ -55,10 +55,16 @@ section[id] {
 }
 
 .section--hero {
-  min-height: 100vh;
+  /* main already reserves 64px for the fixed navbar */
+  min-height: calc(100vh - 64px);
+  min-height: calc(100svh - 64px); /* Android Chrome: ignores the collapsing URL bar */
   display: flex;
   align-items: center;
-  padding-block: var(--space-20);
+  padding-block: var(--space-12);
+}
+
+@media (min-width: 905px) {
+  .section--hero { padding-block: var(--space-20); }
 }
 
 .section--compact { padding-block: var(--space-12); }

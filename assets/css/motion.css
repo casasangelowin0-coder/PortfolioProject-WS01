@@ -51,14 +51,17 @@
   }
 }
 
-/* ---- Theme Transition ---- */
-*,
-*::before,
-*::after {
+/* ---- Theme Transition ----
+   Only active for ~350ms while the theme is toggled (class added in theme.js),
+   instead of putting transitions on every element all the time. */
+html.theme-transition,
+html.theme-transition *,
+html.theme-transition *::before,
+html.theme-transition *::after {
   transition: background-color var(--duration-medium) var(--easing-standard),
               border-color var(--duration-medium) var(--easing-standard),
               color var(--duration-medium) var(--easing-standard),
-              box-shadow var(--duration-medium) var(--easing-standard);
+              box-shadow var(--duration-medium) var(--easing-standard) !important;
 }
 
 /* ---- Hero Entrance ---- */
@@ -74,7 +77,7 @@
 
 /* ---- Card Hover ---- */
 .card--elevated {
-  will-change: transform, box-shadow;
+  /* no permanent will-change: it keeps GPU layers alive on low-end Android */
 }
 
 /* ---- Button Ripple (CSS-only approximation) ---- */
