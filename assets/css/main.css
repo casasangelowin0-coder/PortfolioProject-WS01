@@ -171,7 +171,7 @@ button { font-family: inherit; }
   box-shadow: var(--elevation-2);
   overflow: hidden;
   transform-style: preserve-3d;
-  animation: avatar-coin-flip 6s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  animation: avatar-flip 6s cubic-bezier(0.45, 0, 0.55, 1) infinite;
   will-change: transform;
 }
 
@@ -179,10 +179,7 @@ button { font-family: inherit; }
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background-image: url("../images/coin-avatar.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: linear-gradient(135deg, var(--color-primary-container) 0%, var(--color-secondary-container) 100%);
   backface-visibility: hidden;
   transform: rotateY(180deg);
 }
@@ -199,7 +196,7 @@ button { font-family: inherit; }
   backface-visibility: hidden;
 }
 
-@keyframes avatar-coin-flip {
+@keyframes avatar-flip {
   0%, 58% { transform: rotateY(0deg); }
   80%, 100% { transform: rotateY(360deg); }
 }
@@ -333,7 +330,7 @@ button { font-family: inherit; }
 /* ---- Hero Name Pop Animation ---- */
 .hero__title {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   flex-wrap: wrap;
   gap: var(--space-2);
   justify-content: center;
