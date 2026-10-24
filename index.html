@@ -13,8 +13,6 @@
   <meta property="og:url" content="https://casasangelowin0-coder.github.io/PorfolioProject-WS01/">
   <meta name="twitter:card" content="summary_large_image">
   <title>Angelo Win Casas — IT Student · Systems Enthusiast</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
   <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.svg">
@@ -76,13 +74,20 @@
         <div class="hero__inner">
           <div class="hero__content">
             <div class="hero__intro">
-              <img class="hero__avatar" src="assets/images/profile.jpg" alt="Portrait of Angelo Win Casas" width="384" height="384">
+              <div class="hero__avatar-wrap">
+                <div class="hero__avatar-flip">
+                  <img class="hero__avatar hero__avatar--front" src="assets/images/profile.jpg" alt="Portrait of Angelo Win Casas" width="352" height="352" fetchpriority="high" decoding="async">
+                  <img class="hero__avatar hero__avatar--back" src="assets/images/coin-avatar.webp" alt="" width="384" height="384" decoding="async" aria-hidden="true">
+                </div>
+              </div>
               <div class="hero__heading">
                 <span class="hero__badge">IT Student · Systems Enthusiast</span>
                 <h1 id="hero-title" class="hero__title">
-                  <span class="hero__name-static">Hello there, I'm </span>
-                  <span class="hero__wave-emoji" aria-hidden="true">👋</span>
-                  <span class="hero__name-swipe" aria-live="polite"></span>
+                  <span class="hero__greeting">
+                    <span class="hero__name-static">Hello there, I'm</span>
+                    <span class="hero__wave-emoji" aria-hidden="true">👋</span>
+                  </span>
+                  <span class="hero__name-swipe">Angelo Win Casas</span>
                 </h1>
               </div>
             </div>
