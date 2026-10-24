@@ -556,14 +556,6 @@ button { font-family: inherit; }
   z-index: 1;
 }
 
-.timeline__date {
-  font-size: var(--text-body-small);
-  color: var(--color-on-surface-variant);
-  font-weight: var(--weight-medium);
-  margin-bottom: var(--space-1);
-  text-align: center;
-}
-
 .timeline__role {
   font-size: var(--text-title-large);
   font-weight: var(--weight-semibold);
@@ -747,7 +739,10 @@ button { font-family: inherit; }
 
 /* ---- Print Styles ---- */
 @media print {
-  .navbar, .fab, .back-to-top, .theme-toggle, .footer__social { display: none; }
+  .navbar,
+.back-to-top,
+.theme-toggle,
+.footer__social { display: none; }
   .hero { min-height: auto; padding: var(--space-8) 0; }
   .section { padding-block: var(--space-8); }
   body { background: white; color: black; }
