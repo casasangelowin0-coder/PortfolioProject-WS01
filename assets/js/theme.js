@@ -18,7 +18,11 @@ export function initTheme() {
     toggle.addEventListener('click', () => {
       const currentTheme = document.documentElement.getAttribute(THEME_ATTR) || 'light';
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      const root = document.documentElement;
+      root.classList.add('theme-transition');
       applyTheme(newTheme);
+      clearTimeout(toggle._themeTimer);
+      toggle._themeTimer = setTimeout(() => root.classList.remove('theme-transition'), 350);
     });
   }
 
@@ -35,10 +39,10 @@ function applyTheme(theme) {
   localStorage.setItem(THEME_KEY, theme);
 
   // Update meta theme-color
-  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-  if (metaThemeColor) {
-    metaThemeColor.setAttribute('content', theme === 'dark' ? '#1d1d1f' : '#1a73e8');
-  }
+  // (both <meta> tags: the page has a light and a dark one with media queries)
+  document.querySelectorAll('meta[name="theme-color"]').forEach((meta) => {
+    meta.setAttribute('content', theme === 'dark' ? '#1d1d1f' : '#1a73e8');
+  });
 
   // Dispatch custom event for other modules
   window.dispatchEvent(new CustomEvent('themechange', { detail: { theme } }));
