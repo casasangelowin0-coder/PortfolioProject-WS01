@@ -2,7 +2,7 @@
   "name": "Angelo Win Casas — IT Student",
   "short_name": "Angelo WC",
   "description": "2nd-year IT student portfolio. Passionate about Operating Systems, kernels, and low-level programming.",
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#fefbff",
   "theme_color": "#1a73e8",
