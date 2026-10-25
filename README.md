@@ -6,7 +6,7 @@
 **Subject:** WS01
 **Section:** E053
 
-🔗 **Live Site:** https://casasangelowin0-coder.github.io/PorfolioProject-WS01/
+🔗 **Live Site:** https://casasangelowin0-coder.github.io/PortfolioProject-WS01/
 💻 **Repository:** https://github.com/casasangelowin0-coder/PortfolioProject-WS01
 
 ---
