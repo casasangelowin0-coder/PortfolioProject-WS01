@@ -357,6 +357,15 @@ button { font-family: inherit; }
   text-align: end;
 }
 
+@media (max-width: 479px) {
+  .world-timer__footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+  .world-timer__date { text-align: start; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .world-timer__colon { animation: none; }
 }
@@ -444,8 +453,8 @@ button { font-family: inherit; }
   color: var(--color-on-surface-variant);
   max-width: 640px;
   margin-inline: auto;
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: center;
+  text-wrap: pretty;
   line-height: var(--line-height-relaxed);
 }
 
@@ -495,8 +504,8 @@ button { font-family: inherit; }
   color: var(--color-on-surface-variant);
   margin: 0;
   line-height: var(--line-height-relaxed);
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: center;
+  text-wrap: pretty;
 }
 
 .about__actions {
@@ -537,7 +546,7 @@ button { font-family: inherit; }
 
 .timeline__item {
   position: relative;
-  padding-left: var(--space-2);
+  padding-left: var(--space-4);
   padding-bottom: var(--space-10);
 }
 
@@ -546,7 +555,7 @@ button { font-family: inherit; }
 .timeline__marker {
   position: absolute;
   left: -18px;
-  top: 24px;
+  top: calc(var(--text-title-large) * 0.65 - 10px); /* centers the dot on the title's first line */
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -560,7 +569,8 @@ button { font-family: inherit; }
   font-size: var(--text-title-large);
   font-weight: var(--weight-semibold);
   margin-bottom: var(--space-1);
-  text-align: center;
+  line-height: 1.3;
+  text-align: left;
 }
 
 .timeline__company {
@@ -568,15 +578,15 @@ button { font-family: inherit; }
   color: var(--color-primary);
   font-weight: var(--weight-medium);
   margin-bottom: var(--space-3);
-  text-align: center;
+  text-align: left;
 }
 
 .timeline__desc {
   font-size: var(--text-body-medium);
   color: var(--color-on-surface-variant);
   line-height: var(--line-height-relaxed);
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: left;
+  text-wrap: pretty;
 }
 
 /* ---- Contact Section ---- */
@@ -597,8 +607,8 @@ button { font-family: inherit; }
   margin-bottom: 0;
   max-width: 560px;
   margin-inline: auto;
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: center;
+  text-wrap: pretty;
   line-height: var(--line-height-relaxed);
 }
 
@@ -612,7 +622,7 @@ button { font-family: inherit; }
 
 .form__row {
   display: grid;
-  gap: var(--space-4);
+  column-gap: var(--space-4); /* rows get their spacing from .form__group, so no extra row gap */
   grid-template-columns: 1fr;
 }
 
@@ -650,6 +660,7 @@ button { font-family: inherit; }
 }
 
 .footer__copyright {
+  margin: 0;
   font-size: var(--text-body-small);
   color: var(--color-on-surface-variant);
 }

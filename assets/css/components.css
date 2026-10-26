@@ -94,6 +94,112 @@
   transform: translateY(-4px);
 }
 
+/* Button Size Variants */
+.btn--sm { height: 36px; padding: 0 var(--space-4); font-size: var(--text-label-medium); }
+
+/* ---- Projects Section ---- */
+.projects__title {
+  font-size: var(--text-headline-medium);
+  margin-bottom: var(--space-3);
+  text-align: center;
+}
+
+.projects__subtitle {
+  text-align: center;
+  font-size: var(--text-body-large);
+  color: var(--color-on-surface-variant);
+  line-height: var(--line-height-relaxed);
+  max-width: 720px;
+  margin-inline: auto;
+  margin-bottom: var(--space-10);
+  text-wrap: pretty;
+}
+
+/* Cards are capped at 420px and centered, so one project (or two, or three)
+   always sits in the middle instead of hugging the left edge. */
+.projects__grid {
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 420px));
+  justify-content: center;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--space-6);
+  text-align: center;
+}
+
+.project-card__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.project-card__title {
+  font-size: var(--text-title-large);
+  font-weight: var(--weight-semibold);
+  margin: 0;
+}
+
+.project-card__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-3);
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+  border-radius: var(--radius-full);
+  font-size: var(--text-label-small);
+  font-weight: var(--weight-medium);
+  white-space: nowrap;
+}
+
+.project-card__desc {
+  font-size: var(--text-body-medium);
+  color: var(--color-on-surface-variant);
+  margin: 0 auto var(--space-6);
+  line-height: var(--line-height-relaxed);
+  max-width: 100%;
+  text-wrap: pretty;
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  justify-content: center;
+  margin-bottom: var(--space-6);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-2);
+  background: var(--color-surface-container-high);
+  color: var(--color-on-surface-variant);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-label-small);
+  font-weight: var(--weight-medium);
+  white-space: nowrap;
+}
+
+.project-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: auto;
+}
+
+.project-card__actions .btn {
+  flex: 1 1 120px;
+  justify-content: center;
+  height: 44px; /* comfortable touch target on phones */
+}
+
 /* ---- Text Field ---- */
 .textfield {
   position: relative;
