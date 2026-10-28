@@ -30,8 +30,8 @@ The project demonstrates fundamental web development competencies required in WS
 - **Hero section** — profile avatar, animated name pop-in, waving emoji, and a **live Philippines time card** with per-digit rolling animation and the current date.
 - **About section** — student bio and skill cards (Systems Programming, Backend & APIs, Learning & Tools).
 - **Journey section** — academic timeline (2nd year, 1st year, SHS Industrial Arts – TVL).
-- **Projects section** — showcased projects including this portfolio site, a mini shell in C, and Linux kernel module exploration, each with tech tags and live/repo links.
-- **Contact section** — validated form powered by Formspree, plus direct email link.
+- **Projects section** — showcased projects including this portfolio site and others if there is.
+- **Contact section** — validated form powered by Formspree as (Backend), plus direct email link.
 - **Theme toggle** — dark/light mode with `localStorage` persistence and OS preference detection.
 - **Responsive + accessible** — mobile-first layout, semantic landmarks, skip link, focus states, `prefers-reduced-motion` support.
 
