@@ -14,7 +14,12 @@ export function initNavigation() {
     navbar?.classList.toggle(NAVBAR_SCROLLED_CLASS, y > 10);
     backToTop?.classList.toggle('back-to-top--visible', y > 300);
   };
-  window.addEventListener('scroll', handleScroll, { passive: true });
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => { handleScroll(); ticking = false; });
+  }, { passive: true });
   if (toggle && drawer && backdrop) {
     const openDrawer = () => {
       drawer.classList.add(DRAWER_OPEN_CLASS);

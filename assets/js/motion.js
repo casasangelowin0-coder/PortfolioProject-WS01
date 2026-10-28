@@ -1,5 +1,11 @@
 const REVEAL_SELECTOR = '.reveal:not(.reveal--visible)';
 export function initMotion() {
+  const hero = document.querySelector('.hero');
+  if (hero) {
+    new IntersectionObserver(([e]) => {
+      document.body.classList.toggle('is-offscreen', !e.isIntersecting);
+    }).observe(hero);
+  }
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (prefersReducedMotion) {
     document.querySelectorAll('.reveal').forEach(el => {

@@ -13,12 +13,14 @@
   100% { box-shadow: 0 0 0 4px transparent; }
 }
 .reveal {
+  will-change: opacity, transform;
   opacity: 0;
   transform: translateY(24px);
   transition: opacity var(--duration-medium) var(--easing-decelerate),
               transform var(--duration-medium) var(--easing-decelerate);
 }
 .reveal--visible {
+  will-change: auto;
   opacity: 1;
   transform: translateY(0);
 }
@@ -71,4 +73,11 @@ html.theme-transition *::after {
 }
 :focus-visible {
   animation: focus-ring var(--duration-short) var(--easing-standard);
+}
+.is-offscreen .hero__avatar-flip,
+.is-offscreen .hero__wave-emoji,
+.is-offscreen .world-timer__colon { animation-play-state: paused; }
+.section:not(.section--hero) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 700px;
 }

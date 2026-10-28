@@ -547,7 +547,9 @@ button { font-family: inherit; }
   height: 40px;
   border-radius: var(--radius-full);
   color: var(--color-on-surface-variant);
-  transition: all var(--duration-short) var(--easing-standard);
+  transition-property: background-color, color;
+  transition-duration: var(--duration-short);
+  transition-timing-function: var(--easing-standard);
 }
 .footer__link:hover {
   color: var(--color-primary);
@@ -574,7 +576,9 @@ button { font-family: inherit; }
   opacity: 0;
   visibility: hidden;
   transform: translateY(20px);
-  transition: all var(--duration-medium) var(--easing-standard);
+  transition-property: opacity, visibility, transform, box-shadow;
+  transition-duration: var(--duration-medium);
+  transition-timing-function: var(--easing-standard);
   z-index: var(--z-fixed);
 }
 .back-to-top--visible {
@@ -596,7 +600,9 @@ button { font-family: inherit; }
   align-items: center;
   justify-content: center;
   color: var(--color-on-surface);
-  transition: all var(--duration-short) var(--easing-standard);
+  transition-property: background-color, color;
+  transition-duration: var(--duration-short);
+  transition-timing-function: var(--easing-standard);
 }
 .theme-toggle:hover { background: var(--color-surface-container-highest); }
 .theme-toggle:focus-visible { outline: var(--focus-ring); outline-offset: var(--focus-ring-offset); }
