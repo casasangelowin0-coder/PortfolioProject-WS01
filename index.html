@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IT Student portfolio — Angelo Win Casas. 2nd-year student passionate about Operating Systems, systems programming, and low-level development.">
+  <meta name="theme-color" content="#1a73e8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1d1d1f" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Angelo Win Casas — IT Student · Systems Enthusiast">
+  <meta property="og:description" content="2nd-year IT student portfolio. Passionate about Operating Systems, kernels, and low-level programming.">
+  <meta property="og:image" content="assets/images/og-image.svg">
+  <meta property="og:url" content="https://casasangelowin0-coder.github.io/PortfolioProject-WS01/">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Angelo Win Casas — IT Student · Systems Enthusiast</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.svg">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header class="navbar" role="banner" id="navbar">
+    <div class="navbar__inner">
+      <a href="#" class="navbar__brand" aria-label="Go to homepage">Angelo WC</a>
+      <nav class="navbar__menu" aria-label="Main navigation">
+        <ul class="navbar__menu" role="menubar">
+          <li role="none"><a href="#about" class="navbar__link" role="menuitem">About</a></li>
+          <li role="none"><a href="#experience" class="navbar__link" role="menuitem">Experience</a></li>
+          <li role="none"><a href="#projects" class="navbar__link" role="menuitem">Projects</a></li>
+          <li role="none"><a href="#contact" class="navbar__link" role="menuitem">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" type="button">
+          <svg class="icon icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+          </svg>
+          <svg class="icon icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+        <button class="navbar__toggle" id="navbar-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer" type="button">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="drawer__backdrop" id="drawer-backdrop" aria-hidden="true"></div>
+  <aside class="drawer" id="mobile-drawer" role="navigation" aria-label="Mobile menu">
+    <ul class="drawer__menu">
+      <li><button class="drawer__item" data-target="about">About</button></li>
+      <li><button class="drawer__item" data-target="experience">Experience</button></li>
+      <li><button class="drawer__item" data-target="projects">Projects</button></li>
+      <li><button class="drawer__item" data-target="contact">Contact</button></li>
+    </ul>
+  </aside>
+  <main id="main" role="main">
+    <section class="section section--hero hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero__inner">
+          <div class="hero__content">
+            <div class="hero__intro">
+              <div class="hero__avatar-wrap">
+                <div class="hero__avatar-flip">
+                  <img class="hero__avatar hero__avatar--front" src="assets/images/profile.jpg" alt="Portrait of Angelo Win Casas" width="352" height="352" fetchpriority="high" decoding="async">
+                  <img class="hero__avatar hero__avatar--back" src="assets/images/coin-avatar.webp" alt="" width="384" height="384" decoding="async" aria-hidden="true">
+                </div>
+              </div>
+              <div class="hero__heading">
+                <span class="hero__badge">IT Student · Systems Enthusiast</span>
+                <h1 id="hero-title" class="hero__title">
+                  <span class="hero__greeting">
+                    <span class="hero__name-static">Hello there, I'm</span>
+                    <span class="hero__wave-emoji" aria-hidden="true">👋</span>
+                  </span>
+                  <span class="hero__name-swipe">Angelo Win Casas</span>
+                </h1>
+              </div>
+            </div>
+            <p class="hero__subtitle">2nd-year IT student obsessed with Operating Systems, kernels, and low-level programming. Building projects that bridge systems programming and modern development. Thanks for visiting!</p>
+            <div class="hero__actions">
+              <a href="#about" class="btn btn--filled btn--lg">About Me</a>
+              <a href="#contact" class="btn btn--outlined btn--lg">Get In Touch</a>
+            </div>
+          </div>
+          <div class="hero__visual world-timer" role="img" aria-label="Live Philippines time clock">
+            <div class="world-timer__panel">
+              <div class="world-timer__top">
+                <span class="world-timer__brand">◣ PHILIPPINES TIME</span>
+                <span class="world-timer__dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+              </div>
+              <div class="world-timer__labels" aria-hidden="true"><span>hours</span><span>minutes</span><span>seconds</span></div>
+              <div class="world-timer__clock" aria-hidden="true">
+                <span class="wt-drum"><span class="wt-drum-inner wt-digit" id="wt-h1">0</span></span><span class="wt-drum"><span class="wt-drum-inner wt-digit" id="wt-h2">0</span></span><span class="world-timer__colon">:</span><span class="wt-drum"><span class="wt-drum-inner wt-digit" id="wt-m1">0</span></span><span class="wt-drum"><span class="wt-drum-inner wt-digit" id="wt-m2">0</span></span><span class="world-timer__colon">:</span><span class="wt-drum"><span class="wt-drum-inner wt-digit" id="wt-s1">0</span></span><span class="wt-drum"><span class="wt-drum-inner wt-digit" id="wt-s2">0</span></span>
+              </div>
+              <div class="world-timer__footer">
+                <div class="world-timer__place"><strong>MANILA,</strong><strong>PHILIPPINES</strong></div>
+                <div class="world-timer__date" id="wt-date">Sunday, April 27</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="about" class="section about" aria-labelledby="about-title">
+      <div class="container">
+        <header class="about__header reveal">
+          <h2 id="about-title" class="about__title">About Me</h2>
+          <p class="about__description">I'm a 2nd-year IT college student with a deep fascination for Operating Systems — how kernels manage memory, schedule processes, and abstract hardware. I chose this course because I'm genuinely enthusiastic about low-level systems programming, and I'm stubborn about mastering the fundamentals: C, Linux internals, memory management, and concurrency. When I'm not studying, I'm building projects that bridge the gap between systems programming and modern web development.</p>
+        </header>
+        <div class="about__grid">
+          <article class="card card--elevated skill-card reveal">
+            <svg class="skill-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+            <h3 class="skill-card__title">Systems Programming</h3>
+            <p class="skill-card__desc">C, Linux, Memory Management, Process Scheduling, POSIX Threads, Shell Scripting</p>
+          </article>
+          <article class="card card--elevated skill-card reveal">
+            <svg class="skill-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="2"/>
+              <path d="M6 10h12M6 14h12M10 18h8"/>
+            </svg>
+            <h3 class="skill-card__title">Backend & APIs</h3>
+            <p class="skill-card__desc">Python, Go, REST APIs, SQL, Docker, Git, Linux CLI</p>
+          </article>
+          <article class="card card--elevated skill-card reveal">
+            <svg class="skill-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+            <h3 class="skill-card__title">Learning & Tools</h3>
+            <p class="skill-card__desc">OS Internals, Computer Networks, Data Structures, Algorithms, VS Code, GitHub</p>
+          </article>
+        </div>
+        <div class="about__actions flex justify-center gap-4 mt-10 reveal">
+          <a href="https://github.com/casasangelowin0-coder" class="btn btn--text btn--lg" target="_blank" rel="noopener">GitHub Profile</a>
+        </div>
+      </div>
+    </section>
+    <section id="experience" class="section experience" aria-labelledby="experience-title">
+      <div class="container">
+        <h2 id="experience-title" class="experience__title reveal">Journey</h2>
+        <div class="timeline">
+          <article class="timeline__item reveal">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <h3 class="timeline__role">2nd Year IT Student</h3>
+            <p class="timeline__company">College / University</p>
+            <p class="timeline__desc">Focused on Operating Systems, Computer Architecture, and Data Structures. Currently building a mini shell in C, exploring Linux kernel modules, and learning x86 assembly. Active in the campus tech community.</p>
+          </article>
+          <article class="timeline__item reveal">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <h3 class="timeline__role">1st Year BSIT Student</h3>
+            <p class="timeline__company">College / University</p>
+            <p class="timeline__desc">Started my first year in college by shifting courses and choosing BSIT as my new program, driven by my interest in IoT and emerging technologies.</p>
+          </article>
+          <article class="timeline__item reveal">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <h3 class="timeline__role">Industrial Arts (TVL) Graduate</h3>
+            <p class="timeline__company">Concepcion Integrated School — Secondary Level, Marikina City</p>
+            <p class="timeline__desc">Graduated from Concepcion Integrated School, Secondary Level, Marikina City. Completed the Industrial Arts strand under the Technical-Vocational-Livelihood (TVL) track, specializing in Electronics Products Assembly and Servicing (EPAS).</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="projects" class="section projects" aria-labelledby="projects-title">
+      <div class="container">
+        <h2 id="projects-title" class="projects__title reveal">Projects</h2>
+        <p class="projects__subtitle reveal">Here's what I've built and deployed so far.</p>
+        <div class="projects__grid reveal">
+          <article class="project-card card card--elevated">
+            <div class="project-card__header">
+              <h3 class="project-card__title">Personal Portfolio Website</h3>
+              <span class="project-card__badge">Course Project · WS01</span>
+            </div>
+            <p class="project-card__desc">A responsive, single-page portfolio built with semantic HTML5, Material 3 CSS design tokens, and vanilla JavaScript. Features dark/light theme, live Philippines-time clock with rolling-digit animation, scroll-reveal motion, and a validated contact form. Deployed via GitHub Actions to GitHub Pages.</p>
+            <div class="project-card__tags">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">GitHub Pages</span>
+              <span class="tag">Accessibility</span>
+            </div>
+            <div class="project-card__actions">
+              <a href="https://casasangelowin0-coder.github.io/PortfolioProject-WS01/" class="btn btn--filled btn--sm" target="_blank" rel="noopener">Live Site</a>
+              <a href="https://github.com/casasangelowin0-coder/PortfolioProject-WS01" class="btn btn--outlined btn--sm" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="section contact" aria-labelledby="contact-title">
+      <div class="container">
+        <header class="contact__header reveal">
+          <h2 id="contact-title" class="contact__title">Let's Connect</h2>
+          <p class="contact__subtitle">I'm always open to discussing OS internals, systems programming, internship opportunities, or just chatting about technology. Feel free to reach out at <a href="mailto:casasangelowin2@gmail.com">casasangelowin2@gmail.com</a>!</p>
+        </header>
+        <form class="contact__form reveal" id="contact-form" novalidate>
+          <div class="form__row">
+            <div class="form__group textfield">
+              <input type="text" id="name" name="name" class="textfield__input" placeholder=" " required maxlength="60" autocomplete="name">
+              <label for="name" class="textfield__label">Name</label>
+            </div>
+            <div class="form__group textfield">
+              <input type="email" id="email" name="email" class="textfield__input" placeholder=" " required maxlength="100" autocomplete="email">
+              <label for="email" class="textfield__label">Email</label>
+            </div>
+          </div>
+          <div class="form__group textfield">
+            <input type="text" id="subject" name="subject" class="textfield__input" placeholder=" " required>
+            <label for="subject" class="textfield__label">Subject</label>
+          </div>
+          <div class="form__group textfield">
+            <textarea id="message" name="message" class="textfield__input" placeholder=" " required rows="5" style="height: 120px; resize: vertical;"></textarea>
+            <label for="message" class="textfield__label">Message</label>
+          </div>
+          <button type="submit" class="btn btn--filled btn--lg form__submit">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+            Send Message
+          </button>
+          <div class="form__status" id="form-status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <p class="footer__copyright">&copy; 2025 Angelo Win Casas. IT Student · Built with vanilla HTML, CSS & JS.</p>
+      <div class="footer__social">
+        <a href="https://github.com/casasangelowin0-coder" class="footer__link" aria-label="GitHub" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/Win.AWC?mibextid=rS40aB7S9Ucbxw6v" class="footer__link" aria-label="Facebook" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="mailto:casasangelowin2@gmail.com" class="footer__link" aria-label="Email">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top" type="button">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+  <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+  <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>
