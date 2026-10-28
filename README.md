@@ -28,9 +28,10 @@ The project demonstrates fundamental web development competencies required in WS
 ## 3. Features
 
 - **Hero section** — profile avatar, animated name pop-in, waving emoji, and a **live Philippines time card** with per-digit rolling animation and the current date.
-- **About section** — student bio and skill cards (Systems Programming, Backend & APIs, Learning & Tools).
-- **Journey section** — academic timeline (2nd year, 1st year, SHS Industrial Arts – TVL).
-- **Projects section** — showcased projects including this portfolio site and others if there is.
+- **About section** — student bio.
+- **Skills section** — skill cards (Systems Programming, Backend & APIs, Learning & Tools).
+- **Education section** — academic timeline (2nd year, 1st year, SHS Industrial Arts – TVL).
+- **Projects section** — showcased projects with descriptions, tags, and links.
 - **Contact section** — validated form powered by Formspree as (Backend), plus direct email link.
 - **Theme toggle** — dark/light mode with `localStorage` persistence and OS preference detection.
 - **Responsive + accessible** — mobile-first layout, semantic landmarks, skip link, focus states, `prefers-reduced-motion` support.
@@ -45,7 +46,7 @@ The project demonstrates fundamental web development competencies required in WS
 ## 5. Project Structure
 
 ```
-PorfolioProject-WS01/
+PortfolioProject-WS01/
 ├── index.html                  # Main page (hero, about, journey, projects, contact, footer)
 ├── assets/
 │   ├── css/
@@ -87,7 +88,7 @@ Hosting is **free via GitHub Pages**:
 1. Push to the `main` branch.
 2. The workflow in `.github/workflows/deploy.yml` uploads the repository as a static Pages artifact (no `npm build`).
 3. In repo **Settings → Pages**, set **Source** to **GitHub Actions**.
-4. The site goes live at `https://casasangelowin0-coder.github.io/PorfolioProject-WS01/` after the Actions run turns green.
+4. The site goes live at `https://casasangelowin0-coder.github.io/PortfolioProject-WS01/` after the Actions run turns green.
 
 ## 8. Contact
 
