@@ -6,6 +6,9 @@ import { initHeroNameSwipe } from './hero-swipe.js';
 import { initWorldTime } from './world-time.js';
 import { initCoinSound } from './coin-sound.js';
 import { initMessagePreview } from './message-preview.js';
+import { initLoader } from './loader.js';
+
+initLoader();
 
 document.addEventListener('DOMContentLoaded', () => {
   try {

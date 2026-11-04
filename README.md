@@ -33,6 +33,7 @@ The project demonstrates fundamental web development competencies required in WS
 - **Education section** — academic timeline (2nd year, 1st year, SHS Industrial Arts – TVL).
 - **Projects section** — showcased projects with descriptions, tags, and links, including the **Keystroke typing game** and an embedded **Live Message Preview** demo (live character counter, preview toggle, dynamic note creation).
 - **Contact section** — validated form powered by Formspree as (Backend), plus direct email link.
+- **Loading screen** — animated full-screen loader that fades out once the page has loaded.
 - **Theme toggle** — dark/light mode with `localStorage` persistence and OS preference detection.
 - **Responsive + accessible** — mobile-first layout, semantic landmarks, skip link, focus states, `prefers-reduced-motion` support.
 
@@ -54,6 +55,7 @@ PortfolioProject-WS01/
 │   │   ├── layout.css          # Grid, container, responsive utilities
 │   │   ├── components.css      # Buttons, cards, fields, nav, toast
 │   │   ├── motion.css          # Animations and transitions
+│   │   ├── loader.css          # Loading screen styles
 │   │   └── main.css            # Page styles + hero timer card styles
 │   ├── js/
 │   │   ├── main.js             # Bootstrap entry point
@@ -61,10 +63,11 @@ PortfolioProject-WS01/
 │   │   ├── message-preview.js  # Live Message Preview demo (Projects section)
 │   │   ├── navigation.js       # Navbar, drawer, smooth scroll, back-to-top
 │   │   ├── contact.js          # Validation + Formspree submit + toasts
+│   │   ├── loader.js           # Loading screen (hides once the page has loaded)
 │   │   ├── motion.js           # Scroll-reveal animations
 │   │   ├── hero-swipe.js       # Hero name pop animation
 │   │   └── world-time.js       # Live Philippines clock + rolling digit animation
-│   └── images/                 # Favicon, og-image, profile photo
+│   └── images/                 # Favicon, og-image, profile photo, loading animation
 ├── typing-game/                # Keystroke typing game (linked from Projects section)
 └── .github/workflows/
     └── deploy.yml              # Static deploy to GitHub Pages (no build)

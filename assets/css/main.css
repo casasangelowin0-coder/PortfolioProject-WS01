@@ -2,6 +2,7 @@
 @import url('layout.css');
 @import url('components.css');
 @import url('motion.css');
+@import url('loader.css');
 *, *::before, *::after { box-sizing: border-box; }
 html {
   font-size: 16px;
