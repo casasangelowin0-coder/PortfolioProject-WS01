@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Keystroke – Typing Practice</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Sora:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <p style="margin:0 0 12px"><a href="../#projects" style="color:var(--muted);font-size:.9rem">← Back to portfolio</a></p>
+  <h1>Keystroke</h1>
+  <p class="sub">Pick a level, click the text box and start typing. The timer begins on your first key.</p>
+
+  <div class="levels" role="group" aria-label="Level"></div>
+
+  <div class="stats">
+    <div class="stat" id="tbox"><small>Time left</small><output id="time" aria-live="off">60</output></div>
+    <div class="stat"><small>Words per minute</small><output id="wpm">0</output></div>
+    <div class="stat"><small>Accuracy</small><output id="acc">100%</output></div>
+  </div>
+  <div class="bar"><i id="fill"></i></div>
+
+  <div class="field" id="field">
+    <div id="text" aria-label="Text to type"></div>
+    <textarea id="inp" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Type here"></textarea>
+  </div>
+  <div class="hint"><span id="best"></span><span style="display:flex;gap:8px"><button class="sec" id="snd" type="button" aria-pressed="true">Sound: on</button><button class="sec" id="restart" type="button">New text (Esc)</button></span></div>
+</main>
+
+<dialog id="dlg">
+  <h2 id="dtitle">Time’s up</h2>
+  <div class="res">
+    <div><small>Words per minute</small><b id="rw">0</b></div>
+    <div><small>Accuracy</small><b id="ra">0%</b></div>
+    <div><small>Correct characters</small><b id="rc">0</b></div>
+    <div><small>Mistakes</small><b id="re">0</b></div>
+  </div>
+  <p class="best" id="rb"></p>
+  <button class="go" id="again" type="button">Play again</button>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -380,3 +380,83 @@
 .toast--success { border-left: 4px solid #4caf50; }
 .toast--error { border-left: 4px solid var(--error); }
 .toast--info { border-left: 4px solid var(--color-primary); }
+.project-card--demo.card--elevated:hover {
+  transform: none;
+}
+.mp {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: var(--space-6) 0 0;
+  padding: var(--space-4);
+  background: var(--color-surface-container);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-md);
+  text-align: left;
+}
+.mp[hidden] {
+  display: none;
+}
+.mp__label,
+.mp__heading {
+  font-size: var(--text-label-large);
+  font-weight: var(--weight-semibold);
+  color: var(--color-on-surface);
+}
+.mp__input {
+  width: 100%;
+  padding: var(--space-3);
+  border: 1px solid var(--color-outline);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-on-surface);
+  font: inherit;
+  font-size: var(--text-body-medium);
+  resize: vertical;
+}
+.mp__input:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 1px;
+}
+.mp__counter {
+  margin: 0;
+  font-size: var(--text-label-large);
+  font-weight: var(--weight-semibold);
+  color: var(--color-on-surface-variant);
+}
+.mp__counter--limit {
+  color: var(--error);
+}
+.mp__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.mp__row--notes {
+  margin-top: var(--space-2);
+}
+.mp__preview {
+  margin: 0;
+  min-height: 56px;
+  padding: var(--space-3);
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+  font-size: var(--text-body-medium);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.mp__preview.hidden {
+  display: none;
+}
+.mp__note {
+  margin: var(--space-2) 0 0;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-on-surface-variant);
+  font-size: var(--text-body-medium);
+}

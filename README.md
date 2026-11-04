@@ -31,7 +31,7 @@ The project demonstrates fundamental web development competencies required in WS
 - **About section** — student bio.
 - **Skills section** — skill cards (Systems Programming, Backend & APIs, Learning & Tools).
 - **Education section** — academic timeline (2nd year, 1st year, SHS Industrial Arts – TVL).
-- **Projects section** — showcased projects with descriptions, tags, and links.
+- **Projects section** — showcased projects with descriptions, tags, and links, including the **Keystroke typing game** and an embedded **Live Message Preview** demo (live character counter, preview toggle, dynamic note creation).
 - **Contact section** — validated form powered by Formspree as (Backend), plus direct email link.
 - **Theme toggle** — dark/light mode with `localStorage` persistence and OS preference detection.
 - **Responsive + accessible** — mobile-first layout, semantic landmarks, skip link, focus states, `prefers-reduced-motion` support.
@@ -58,12 +58,14 @@ PortfolioProject-WS01/
 │   ├── js/
 │   │   ├── main.js             # Bootstrap entry point
 │   │   ├── theme.js            # Dark/light theme
+│   │   ├── message-preview.js  # Live Message Preview demo (Projects section)
 │   │   ├── navigation.js       # Navbar, drawer, smooth scroll, back-to-top
 │   │   ├── contact.js          # Validation + Formspree submit + toasts
 │   │   ├── motion.js           # Scroll-reveal animations
 │   │   ├── hero-swipe.js       # Hero name pop animation
 │   │   └── world-time.js       # Live Philippines clock + rolling digit animation
 │   └── images/                 # Favicon, og-image, profile photo
+├── typing-game/                # Keystroke typing game (linked from Projects section)
 └── .github/workflows/
     └── deploy.yml              # Static deploy to GitHub Pages (no build)
 ```

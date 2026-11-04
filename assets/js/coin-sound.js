@@ -15,17 +15,11 @@ export function initCoinSound() {
   sound.preload = 'auto';
   sound.volume = VOLUME;
 
-  // Browsers block audio until the visitor interacts with the page.
-  let unlocked = false;
-  const unlockEvents = ['pointerdown', 'keydown', 'touchstart'];
-  const unlock = () => {
-    unlocked = true;
-    unlockEvents.forEach(evt => window.removeEventListener(evt, unlock));
-  };
-  unlockEvents.forEach(evt => window.addEventListener(evt, unlock, { passive: true }));
-
+  // The sound is attempted automatically on every flip, with no click needed.
+  // If the browser's autoplay policy blocks it, play() is rejected silently and
+  // the very next flip is attempted again; once the visitor interacts with the
+  // page (or allows sound for the site), it starts playing on its own.
   function play() {
-    if (!unlocked) return;
     sound.currentTime = 0;
     sound.play().catch(() => {});
   }

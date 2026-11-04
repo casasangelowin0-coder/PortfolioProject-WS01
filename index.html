@@ -201,6 +201,55 @@
               <a href="https://github.com/casasangelowin0-coder/PortfolioProject-WS01" class="btn btn--outlined btn--sm" target="_blank" rel="noopener">GitHub</a>
             </div>
           </article>
+          <article class="project-card card card--elevated project-card--demo">
+            <div class="project-card__header">
+              <h3 class="project-card__title">Live Message Preview</h3>
+              <span class="project-card__badge">Course Activity · WS1 Chapter 5</span>
+            </div>
+            <p class="project-card__desc">A client-side JavaScript demo that mirrors what you type in real time, tracks a 280-character limit, toggles the preview, and creates new DOM elements on demand.</p>
+            <div class="project-card__tags">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">DOM Events</span>
+            </div>
+            <div class="project-card__actions">
+              <button class="btn btn--filled btn--sm" id="mp-open" type="button" aria-expanded="false" aria-controls="message-preview-demo">Try Demo</button>
+            </div>
+            <div class="mp" id="message-preview-demo" hidden>
+              <label class="mp__label" for="mp-input">Type your message</label>
+              <textarea class="mp__input" id="mp-input" rows="4" maxlength="280" placeholder="Write something here..."></textarea>
+              <p class="mp__counter" id="mp-count" aria-live="polite">0 / 280</p>
+              <div class="mp__row">
+                <span class="mp__heading">Preview</span>
+                <button class="btn btn--outlined btn--sm" id="mp-toggle" type="button" aria-expanded="true" aria-controls="mp-preview">Hide Preview</button>
+              </div>
+              <p class="mp__preview" id="mp-preview">Your message preview will appear here.</p>
+              <div class="mp__row mp__row--notes">
+                <span class="mp__heading">Create an element</span>
+                <button class="btn btn--outlined btn--sm" id="mp-add-note" type="button">Add a temporary note</button>
+              </div>
+              <div id="mp-notes" aria-live="polite"></div>
+            </div>
+
+          </article>
+          <article class="project-card card card--elevated">
+            <div class="project-card__header">
+              <h3 class="project-card__title">Keystroke – Typing Game</h3>
+              <span class="project-card__badge">Personal Project</span>
+            </div>
+            <p class="project-card__desc">A timed typing-practice game with four difficulty levels, from short sentences to numbers and symbols. It tracks live words per minute and accuracy, highlights mistakes as you type, plays optional sound feedback, and saves your best score in the browser.</p>
+            <div class="project-card__tags">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Web Audio</span>
+              <span class="tag">localStorage</span>
+            </div>
+            <div class="project-card__actions">
+              <a href="typing-game/" class="btn btn--filled btn--sm">Play Game</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
