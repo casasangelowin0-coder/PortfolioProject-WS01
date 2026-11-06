@@ -22,13 +22,13 @@ The project demonstrates fundamental web development competencies required in WS
 
 - Build a responsive, multi-section portfolio using HTML, CSS, and JavaScript.
 - Apply layout techniques (Flexbox, CSS Grid) and a consistent design system.
-- Implement interactive features: dark/light theme, scroll animations, live Philippines clock, and a validated contact form.
+- Implement interactive features: dark/light theme, scroll animations, loading screen, and a validated contact form.
 - Practice version control with Git/GitHub and automated deployment with GitHub Actions.
 - Follow accessibility (WCAG 2.1 AA) and performance best practices.
 
 ## 3. Features
 
-- **Hero section** — profile avatar, animated name pop-in, waving emoji, and a **live Philippines time card** with per-digit rolling animation and the current date.
+- **Hero section** — profile avatar, animated name pop-in, waving emoji, and a animated ASCII aquarium background.
 - **About section** — student bio.
 - **Skills section** — skill cards (Frontend, Backend & APIs, Learning & Tools).
 - **Education & Achievements section** — academic timeline (ICCT Colleges Foundation Inc., SHS Industrial Arts – TVL) and TESDA NC II in EPAS.
@@ -67,7 +67,6 @@ PortfolioProject-WS01/
 │   │   ├── loader.js           # Loading screen (hides once the page has loaded)
 │   │   ├── motion.js           # Scroll-reveal animations
 │   │   ├── hero-swipe.js       # Hero name pop animation
-│   │   └── world-time.js       # Live Philippines clock + rolling digit animation
 │   └── images/                 # Favicon, og-image, profile photo, loading animation
 ├── typing-game/                # Keystroke typing game (linked from Projects section)
 └── .github/workflows/
