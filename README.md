@@ -30,8 +30,8 @@ The project demonstrates fundamental web development competencies required in WS
 
 - **Hero section** — profile avatar, animated name pop-in, waving emoji, and a **live Philippines time card** with per-digit rolling animation and the current date.
 - **About section** — student bio.
-- **Skills section** — skill cards (Systems Programming, Backend & APIs, Learning & Tools).
-- **Education section** — academic timeline (2nd year, 1st year, SHS Industrial Arts – TVL).
+- **Skills section** — skill cards (Frontend, Backend & APIs, Learning & Tools).
+- **Education & Achievements section** — academic timeline (ICCT Colleges Foundation Inc., SHS Industrial Arts – TVL) and TESDA NC II in EPAS.
 - **Projects section** — showcased projects with descriptions, tags, and links, including the **Keystroke typing game** and an embedded **Live Message Preview** demo (live character counter, preview toggle, dynamic note creation).
 - **Contact section** — validated form powered by Formspree as (Backend), plus direct email link.
 - **Loading screen** — animated full-screen loader that fades out once the page has loaded.
