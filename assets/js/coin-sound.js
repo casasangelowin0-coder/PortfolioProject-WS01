@@ -11,17 +11,55 @@ export function initCoinSound() {
   if (!element) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  const sound = new Audio(SOUND_SRC);
-  sound.preload = 'auto';
-  sound.volume = VOLUME;
+  // Browsers never allow audible sound before the visitor has interacted with
+  // the page at all, so the sound is "unlocked" by ANY first interaction
+  // (tap, key press, click, scroll gesture) - not by clicking the coin itself.
+  // After that it plays automatically on every flip. Chrome/Edge also allow it
+  // from the very first flip on sites the visitor has engaged with before.
+  const AudioCtx = window.AudioContext || window.webkitAudioContext;
+  const ctx = AudioCtx ? new AudioCtx() : null;
+  let buffer = null;
 
-  // The sound is attempted automatically on every flip, with no click needed.
-  // If the browser's autoplay policy blocks it, play() is rejected silently and
-  // the very next flip is attempted again; once the visitor interacts with the
-  // page (or allows sound for the site), it starts playing on its own.
+  const fallback = new Audio(SOUND_SRC);
+  fallback.preload = 'auto';
+  fallback.volume = VOLUME;
+
+  if (ctx) {
+    fetch(SOUND_SRC)
+      .then(r => r.arrayBuffer())
+      .then(data => new Promise((res, rej) => ctx.decodeAudioData(data, res, rej)))
+      .then(b => { buffer = b; })
+      .catch(() => {});
+  }
+
+  function unlock() {
+    if (ctx && ctx.state !== 'running') ctx.resume().catch(() => {});
+  }
+  // Try right away (works if the browser already trusts the site).
+  unlock();
+  // Any real user activation unlocks it; keep listening until it is running.
+  const UNLOCK_EVENTS = ['pointerdown', 'pointerup', 'click', 'keydown', 'touchstart', 'touchend'];
+  function onGesture() {
+    unlock();
+    if (!ctx || ctx.state === 'running') {
+      UNLOCK_EVENTS.forEach(e => window.removeEventListener(e, onGesture, true));
+    }
+  }
+  UNLOCK_EVENTS.forEach(e => window.addEventListener(e, onGesture, true));
+
   function play() {
-    sound.currentTime = 0;
-    sound.play().catch(() => {});
+    if (ctx && buffer && ctx.state === 'running') {
+      const src = ctx.createBufferSource();
+      const gain = ctx.createGain();
+      gain.gain.value = VOLUME;
+      src.buffer = buffer;
+      src.connect(gain).connect(ctx.destination);
+      src.start();
+      return;
+    }
+    // Fallback (e.g. opened from file://, or Web Audio unavailable).
+    fallback.currentTime = 0;
+    fallback.play().catch(() => {});
   }
 
   // Detect the moment each flip begins by watching the CSS animation's clock.
